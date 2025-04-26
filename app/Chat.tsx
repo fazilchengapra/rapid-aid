@@ -19,6 +19,7 @@ const Chat = () => {
         ]);
         setMessage("");
       } catch (error) {
+        setLoading(false);
         console.error("Error sending message:", error);
       }
     }
@@ -39,14 +40,14 @@ const Chat = () => {
               className="mb-2 px-10 py-4 text-sm flex flex-col gap-2 w-full"
             >
               <div className="flex justify-end">
-                <Card className="w-fit max-w-[85%] p-3">
+                <Card className="w-fit max-w-[98%] p-3">
                   <Text as="p" className="font-semibold text-right">
                     {item.qst}
                   </Text>
                 </Card>
               </div>
               <div className="flex justify-start">
-                <Card className="w-fit max-w-[85%] p-3 bg-gray-100">
+                <Card className="w-fit max-w-[98%] p-3 bg-gray-100">
                   <Text as="p" className="text-gray-600">
                     {item.res}
                   </Text>
@@ -68,7 +69,7 @@ const Chat = () => {
             <Button
               size="2"
               type="button"
-              onClick={handleSubmit}
+              onClick={() => handleSubmit()}
               disabled={loading}
               className="text-sm sm:text-xs"
             >
