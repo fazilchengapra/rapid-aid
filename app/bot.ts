@@ -8,7 +8,7 @@ if (!process.env.GEN_AI_API_KEY) {
 const genAI = new GoogleGenerativeAI(process.env.GEN_AI_API_KEY);
 
 export async function main({ message }:{ message: string }) {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash"});
   
     const chat = model.startChat({
       history: [
